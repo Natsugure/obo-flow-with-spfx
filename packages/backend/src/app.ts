@@ -527,6 +527,11 @@ function escapeHtml(text: string): string {
 app.get('/api/subscriptions/:userId', async (req: Request, res: Response) => {
   const userId = req.params.userId;
 
+  // userIdが配列の場合はエラー
+  if (Array.isArray(userId)) {
+    return res.status(400).json({ error: '不正なユーザーIDです' });
+  }
+
   try {
     const user = getUserToken(userId);
 

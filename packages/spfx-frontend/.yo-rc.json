@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "packageManager": "pnpm",
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.14.0",
+    "sdksVersions": {},
+    "version": "1.22.1",
+    "libraryName": "obo-flow-with-spfx",
+    "libraryId": "8c507310-0d0c-4583-aa39-e025ec739125",
+    "environment": "spo",
+    "solutionName": "obo-flow-with-spfx",
+    "solutionShortDescription": "obo-flow-with-spfx description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

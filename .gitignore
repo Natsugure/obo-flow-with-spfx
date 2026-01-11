@@ -141,8 +141,8 @@ vite.config.ts.timestamp-*
 .vite/
 
 # IDE setting files
-.vscode/
 .idea/
+# .vscode/ - プロジェクト設定を共有する場合はコメントアウト
 
 # Database files
 *.db
@@ -152,3 +152,20 @@ vite.config.ts.timestamp-*
 # MSAL token cache
 .msal-cache.json
 token-cache.json
+
+# SPFx specific
+temp/
+lib/
+solution/
+*.sppkg
+sharepoint/
+
+# TypeScript build output
+dist/
+build/
+
+# Backend specific
+packages/backend/dist/
+
+# Shared package build output
+packages/shared/dist/

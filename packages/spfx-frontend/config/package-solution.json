@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "obo-flow-with-spfx-client-side-solution",
+    "id": "8c507310-0d0c-4583-aa39-e025ec739125",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "obo-flow-with-spfx description"
+      },
+      "longDescription": {
+        "default": "obo-flow-with-spfx description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "obo-flow-with-spfx Feature",
+        "description": "The feature that activates elements of the obo-flow-with-spfx solution.",
+        "id": "959934ca-6861-42b6-a825-4cf67342f302",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/obo-flow-with-spfx.sppkg"
+  }
+}

@@ -1,20 +1,22 @@
 {
-	"dependencies": {
-		"@azure/msal-node": "^3.8.4",
-		"@microsoft/microsoft-graph-client": "^3.0.7",
-		"axios": "^1.13.2",
-		"dotenv": "^17.2.3",
-		"express": "^5.2.1"
-	},
-	"devDependencies": {
-		"@types/express": "^5.0.6",
-		"@types/node": "^25.0.3",
-		"tsx": "^4.21.0",
-		"typescript": "^5.9.3"
-	},
+  "name": "obo-flow-with-spfx-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Microsoft Graph Change Notifications with SPFx and OBO Flow",
   "scripts": {
-    "dev": "tsx watch src/app.ts",
-    "start": "node dist/app.js",
-    "build": "tsc"
-  }
+    "build": "pnpm -r build",
+    "clean": "pnpm -r clean",
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter spfx-frontend start",
+    "build:backend": "pnpm --filter backend build",
+    "build:frontend": "pnpm --filter spfx-frontend build",
+    "build:shared": "pnpm --filter shared build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
 }
