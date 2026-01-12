@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Microsoft Graph Change Notifications with SPFx and OBO Flow",
-  "scripts": {
+ "scripts": {
     "build": "pnpm -r build",
     "clean": "pnpm -r clean",
     "dev:backend": "pnpm --filter backend dev",
