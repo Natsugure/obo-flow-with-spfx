@@ -5,6 +5,10 @@ import { TokenData } from './types';
 
 dotenv.config();
 
+type OboTokenResponse = AuthenticationResult & {
+  account: NonNullable<AuthenticationResult['account']>
+};
+
 // MSAL設定
 const msalConfig: msal.Configuration = {
   auth: {
@@ -27,42 +31,23 @@ const msalConfig: msal.Configuration = {
 
 const cca = new msal.ConfidentialClientApplication(msalConfig);
 
-/**
- * 認証URLを生成
- */
-export async function getAuthUrl(): Promise<string> {
-  const authCodeUrlParameters: msal.AuthorizationUrlRequest = {
-    scopes: ['User.Read', 'Mail.Read', 'offline_access'],
-    redirectUri: process.env.REDIRECT_URI,
-  };
-  
-  return await cca.getAuthCodeUrl(authCodeUrlParameters);
-}
-
-/**
- * 認証コードからトークンを取得
- */
-export async function getTokenFromCode(code: string): Promise<TokenData> {
-  const tokenRequest: msal.AuthorizationCodeRequest = {
-    code: code,
-    scopes: ['User.Read', 'Mail.Read', 'offline_access'],
-    redirectUri: process.env.REDIRECT_URI,
-  };
-  
-  const response: AuthenticationResult = await cca.acquireTokenByCode(tokenRequest);
-  
-  if (!response.accessToken || !response.account) {
-    throw new Error('トークンまたはアカウント情報の取得に失敗しました');
+export async function acquireTokenOnBehalfOf(userAccessToken: string): Promise<OboTokenResponse> {
+  const oboRequest = {
+    oboAssertion: userAccessToken,
+    scopes: ['https://graph.microsoft.com/.default'],
   }
-  
-  // MSALはリフレッシュトークンを直接返さない
-  // トークンキャッシュに保存される
-  return {
-    accessToken: response.accessToken,
-    refreshToken: '', // MSALがキャッシュで管理するため空文字
-    expiresOn: response.expiresOn || new Date(),
-    account: response.account
-  };
+
+  const result = await cca.acquireTokenOnBehalfOf(oboRequest);
+
+  if (!result) {
+    throw new Error('OBO token acquisition failed: returned null');
+  }
+
+  if (!result.account) {
+    throw new Error('OBO token acquisition failed: account information is missing');
+  }
+
+  return result as OboTokenResponse;
 }
 
 /**

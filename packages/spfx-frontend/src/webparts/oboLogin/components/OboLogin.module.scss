@@ -1,0 +1,120 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.oboLogin {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: "[theme:link, default:#03787c]";
+    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+
+    &:hover {
+      text-decoration: underline;
+      color: "[theme:linkHovered, default: #014446]";
+      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+    }
+  }
+}
+
+// エラーメッセージのスタイル
+.error {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #fde7e9;
+  border: 1px solid #d13438;
+  border-radius: 4px;
+  color: #a4262c;
+  animation: slideIn 0.3s ease-out;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    &::before {
+      content: '⚠️ ';
+      margin-right: 8px;
+    }
+  }
+}
+
+// 成功メッセージのスタイル
+.success {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #dff6dd;
+  border: 1px solid #107c10;
+  border-radius: 4px;
+  color: #323130;
+  animation: slideIn 0.3s ease-out;
+
+  h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #107c10;
+
+    &::before {
+      content: '✅ ';
+      margin-right: 8px;
+    }
+  }
+
+  p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #323130;
+
+    strong {
+      font-weight: 600;
+      color: #0b6a0b;
+    }
+  }
+
+  // 各行にアイコンを追加
+  p:nth-child(2)::before {
+    content: '👤 ';
+    margin-right: 6px;
+  }
+
+  p:nth-child(3)::before {
+    content: '📋 ';
+    margin-right: 6px;
+  }
+
+  p:nth-child(4)::before {
+    content: '📅 ';
+    margin-right: 6px;
+  }
+}
+
+// スライドインアニメーション
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

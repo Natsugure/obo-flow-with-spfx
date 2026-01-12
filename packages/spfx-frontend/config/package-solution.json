@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "obo-flow-with-spfx-client-side-solution",
-    "id": "8c507310-0d0c-4583-aa39-e025ec739125",
+    "name": "on-behalf-of-flow-with-sp-fx-client-side-solution",
+    "id": "10927ecb-8119-40c0-882a-a258438cb958",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
@@ -16,10 +16,10 @@
     },
     "metadata": {
       "shortDescription": {
-        "default": "obo-flow-with-spfx description"
+        "default": "On-Behalf-Of flow with SPFx description"
       },
       "longDescription": {
-        "default": "obo-flow-with-spfx description"
+        "default": "On-Behalf-Of flow with SPFx description"
       },
       "screenshotPaths": [],
       "videoUrl": "",
@@ -27,14 +27,20 @@
     },
     "features": [
       {
-        "title": "obo-flow-with-spfx Feature",
-        "description": "The feature that activates elements of the obo-flow-with-spfx solution.",
-        "id": "959934ca-6861-42b6-a825-4cf67342f302",
+        "title": "on-behalf-of-flow-with-sp-fx Feature",
+        "description": "The feature that activates elements of the on-behalf-of-flow-with-sp-fx solution.",
+        "id": "7b7577fc-8cc5-4ecf-b376-f66467b6fef3",
         "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "sample-obo-front",
+        "scope": "user_impersonation"
       }
     ]
   },
   "paths": {
-    "zippedPackage": "solution/obo-flow-with-spfx.sppkg"
+    "zippedPackage": "solution/on-behalf-of-flow-with-sp-fx.sppkg"
   }
 }

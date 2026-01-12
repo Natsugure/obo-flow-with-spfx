@@ -2,17 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "obo-consumer-web-part": {
+    "obo-login-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/oboConsumer/OboConsumerWebPart.js",
-          "manifest": "./src/webparts/oboConsumer/OboConsumerWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/oboLogin/OboLoginWebPart.js",
+          "manifest": "./src/webparts/oboLogin/OboLoginWebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "OboConsumerWebPartStrings": "lib/webparts/oboConsumer/loc/{locale}.js"
+    "OboLoginWebPartStrings": "lib/webparts/oboLogin/loc/{locale}.js"
   }
 }

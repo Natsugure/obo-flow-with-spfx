@@ -1,4 +1,4 @@
-declare interface IOboConsumerWebPartStrings {
+declare interface IOboLoginWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -13,7 +13,7 @@ declare interface IOboConsumerWebPartStrings {
   UnknownEnvironment: string;
 }
 
-declare module 'OboConsumerWebPartStrings' {
-  const strings: IOboConsumerWebPartStrings;
+declare module 'OboLoginWebPartStrings' {
+  const strings: IOboLoginWebPartStrings;
   export = strings;
 }
